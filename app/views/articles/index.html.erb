@@ -15,17 +15,7 @@
             <%=link_to "Read More", article_path(article.id), :class => "btn btn-default" %>
             <hr>
         <%end%>
-
-          <!-- Pager -->
-          <ul class="pager">
-            <li class="previous">
-              <a href="#">Prev</a>
-            </li>
-            <li class="next">
-              <a href="#">Next</a>
-            </li>
-          </ul>
-
+        <%= paginate @articles %>
         </div>
 
       </div>
