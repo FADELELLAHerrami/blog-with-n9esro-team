@@ -37,6 +37,7 @@ data['articles'].each do |article_data|
     title: article_data['title'],
     background: article_data['urlToImage'],
     user_id: user.id,
+    overview: article_data['description'],
     body: article_data['description']
   )
   puts "#{article.title} created"

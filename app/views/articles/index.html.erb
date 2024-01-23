@@ -1,58 +1,28 @@
 
-
-
-
-
-
-    <!-- Page Content -->
-    <div class="container">
-
-      <div class="row">
-
-        <!-- Blog Entries Column -->
+    <div class="container mt-2">
+      <div class="row mt-8">        <!-- Blog Entries Column -->
         <div class="col-md-12">
 
-
-
         <% @articles.each do |article|%>
-            <!-- Third Blog Post -->
-            <h2 class="post-title">
-              <a href="post.html"><%=article.title%></a>
-            </h2>
+          <em>
+            <%= content_tag :h4, article.title %>
             <p class="lead">
-              by Author
+              <%=article.user.firstName%> <%=article.user.lastName%>
             </p>
+           </em>
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-            <a class="" href="post.html">Read More</a>
+            <p><%=article.overview%></p>
             <%=link_to "Read More", article_path(article.id), :class => "btn btn-default" %>
-
             <hr>
         <%end%>
-
-          <!-- Pager -->
-          <ul class="pager">
-            <li class="previous">
-              <a href="#">Prev</a>
-            </li>
-            <li class="next">
-              <a href="#">Next</a>
-            </li>
-          </ul>
-
+        <%= paginate @articles %>
         </div>
 
       </div>
       <!-- /.row -->
 
     </div>
-    <!-- /.container -->
-
-    <!-- Footer -->
-
-
-
-    <!-- jQuery -->
+    <!-- /.container -->    <!-- Footer -->    <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
