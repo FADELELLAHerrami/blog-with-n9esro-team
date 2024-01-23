@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -92,3 +93,22 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+=======
+<div class="container">
+  <div class="create"></div>
+  <div class="center-articles">
+    <div class="articles">
+      <% @articles.each do |article|%>
+        <div class="card mt-2" style="width: 18rem;">
+          <img class="card-img-top" src= <%=article.background%> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=article.title%></h5>
+            <%=link_to "Read", article_path(article.id)%>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+  </div>
+</div>
+>>>>>>> 43e74dd5532e64711892031f095bed745964f9da
