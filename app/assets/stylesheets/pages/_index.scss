@@ -17,3 +17,23 @@
     border:2px solid black;
   }
 }
+
+.post-title {
+  font-size: 3em;
+}
+
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.pager li>a {
+  color: inherit;
+  border-radius: 0;
+  border: 0;
+  padding: 0.9em 1.4em;
+}

@@ -10,3 +10,52 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+footer {
+  margin: 50px 0;
+  background-color: red
+}
+
+// @media (min-width: 1200px) {
+// .container {
+//   width: 750px;
+// }
+// }
+
+
+
+
+/* Login, Sign up, New post */
+.login,
+.signup {
+  margin-top: 20px;
+}
+
+.login h1,
+.signup h1,
+.newpost h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login .form-control,
+.signup .form-control,
+.newpost .form-control {
+  border-radius: 0;
+}
+
+.login button,
+.signup button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: normal;
+}
+
+.newpost textarea {
+  max-width: 100%;
+}

@@ -1,20 +1,15 @@
-
-
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light mt-0">
   <div class="collapse navbar-collapse d-flex justify-content-between px-5" id="navbarSupportedContent">
     <div class="d-flex justify-content-between align-item-center">
-      <a class="navbar-brand" href="#" class="m-0"><B>OUSSAMA</B></a>
-      <form class="d-flex form-inline my-2 my-lg-0 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <%= link_to 'Blog', root_path, class: 'navbar-brand m-0' %>
+      <%= form_tag('#', method: 'get', class: 'd-flex form-inline my-2 my-lg-0') do %>
+        <%= text_field_tag 'search', nil, class: 'form-control mr-sm-2', placeholder: 'Search', 'aria-label' => 'Search' %>
+        <%= button_tag 'Search', type: 'submit', class: 'btn btn-outline-success my-2 my-sm-0' %>
+      <% end %>
     </div>
     <div class="ml-auto d-flex justfy-content-center align-item-center">
-      <a class="btn btn-link" >Login</a>
-      <a class="btn btn-outline-primary">Create account</a>
+      <%= link_to 'Login', '#', class: 'btn btn-link' %>
+      <%= link_to 'Create account', '#', class: 'btn btn-outline-primary' %>
     </div>
   </div>
 </nav>
