@@ -1,2 +1,20 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container  {
+  margin-top: 5px;
+  .articles{
+    display: flex;
+    flex-direction: column;
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    align-items: center;
+    border: 3px solid green;
+  }
+  .card{
+    border:2px solid black;
+  }
+}
