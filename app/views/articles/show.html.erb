@@ -1,0 +1,105 @@
+
+<div class="w-100 p-3">
+   <div >
+    <%# background %>
+     <img src=<%= @article.background %> style="aspect-ratio: auto 1000 / 420;" width="1000" height="420" class="crayons-article__cover__image" alt="Cover image for GitHub Readme: Responsive? 🤔 Animated? 🤯 Light and dark modes? 😱 You bet! 💪🏼">
+   </div>
+   <div>
+     <div class="crayons-article__header__meta">
+            <div class="flex s:items-start flex-col s:flex-row">
+              <div id="action-space" class="crayons-article__actions mb-4 s:mb-0 s:order-last"></div>
+              <div class="flex flex-1 mb-5 items-start">
+                <%# image de profil %>
+                <div class="relative">
+                    <a href="/grahamthedev"><img class="radius-full align-middle" src="https://media.dev.to/cdn-cgi/image/width=50,height=50,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F551686%2Ff0514090-260b-4a34-89b0-a2b6e922d5ec.jpg" width="40" height="40" alt="GrahamTheDev"></a>
+                </div>
+                <%# uer info %>
+                <div class="pl-3 flex-1">
+                  <a href="/grahamthedev" class="crayons-link fw-bold">FadlAllah Errami</a>
+                  <p class="fs-xs color-base-60">
+                      Posted on <time datetime="2024-01-19T12:06:18Z" class="date-no-year" title="vendredi 19 janvier 2024 à 13:06:18">Jan 21</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="multiple_reactions_engagement">
+            <span class="reaction_engagement_like">
+              <img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" width="24" height="24">
+              <span id="reaction_engagement_like_count">189</span>
+            </span>
+            <span class="reaction_engagement_unicorn">
+              <img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" width="24" height="24">
+              <span id="reaction_engagement_unicorn_count">20</span>
+            </span>
+            <span class="reaction_engagement_exploding_head">
+              <img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" width="24" height="24">
+              <span id="reaction_engagement_exploding_head_count">21</span>
+            </span>
+            <span class="reaction_engagement_raised_hands">
+              <img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" width="24" height="24">
+              <span id="reaction_engagement_raised_hands_count">16</span>
+            </span>
+            <span class="reaction_engagement_fire">
+              <img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" width="24" height="24">
+              <span id="reaction_engagement_fire_count">35</span>
+            </span>
+        </div>
+
+            <%# title  %>
+            <h1 class="fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-2 long">
+              <%= @article.title %>
+            </h1>
+
+              <div class="spec__tags flex flex-wrap">
+                  <a class="crayons-tag   " style="
+                --tag-bg: rgba(0, 0, 0, 0.10);
+                --tag-prefix: #000000;
+                --tag-bg-hover: rgba(0, 0, 0, 0.10);
+                --tag-prefix-hover: #000000;
+              " href="/t/github"><span class="crayons-tag__prefix">#</span>github</a>
+                          <a class="crayons-tag   " style="
+                --tag-bg: rgba(38, 190, 0, 0.10);
+                --tag-prefix: #26BE00;
+                --tag-bg-hover: rgba(38, 190, 0, 0.10);
+                --tag-prefix-hover: #26BE00;
+              " href="/t/opensource"><span class="crayons-tag__prefix">#</span>opensource</a>
+                          <a class="crayons-tag   " style="
+                --tag-bg: rgba(86, 39, 101, 0.10);
+                --tag-prefix: #562765;
+                --tag-bg-hover: rgba(86, 39, 101, 0.10);
+                --tag-prefix-hover: #562765;
+              " href="/t/webdev"><span class="crayons-tag__prefix">#</span>webdev</a>
+                          <a class="crayons-tag   " style="
+                --tag-bg: rgba(41, 101, 241, 0.10);
+                --tag-prefix: #2965F1;
+                --tag-bg-hover: rgba(41, 101, 241, 0.10);
+                --tag-prefix-hover: #2965F1;
+              " href="/t/css"><span class="crayons-tag__prefix">#</span>css</a>
+                      </div>
+                  </div>
+          </div>
+          <%# body %>
+          <div class="crayons-article__body text-styles spec__body" data-article-id="1737703" id="article-body">
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+            <%= @article.body %>
+          </div>
+        </div>
