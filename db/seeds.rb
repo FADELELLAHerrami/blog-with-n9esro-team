@@ -24,10 +24,7 @@ params = {
 
 response = HTTP.get(url, params: params)
 
-
 data = JSON.parse(response.body)
-
-articles = data['articles'].first(10)
 
 data['articles'].each do |article_data|
 
