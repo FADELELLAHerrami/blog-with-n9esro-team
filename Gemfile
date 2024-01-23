@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
+# news-api
+gem 'news-api', '~> 0.0.0'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -27,6 +29,9 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Gemfile
 gem "devise"
+
+# json
+gem 'json', '~> 2.6', '>= 2.6.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -63,6 +68,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  gem 'http', '~> 3.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

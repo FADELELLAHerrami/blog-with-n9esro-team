@@ -3,5 +3,5 @@ class Article < ApplicationRecord
   has_many :users ,through: :collaborations
   belongs_to :user
   has_many :reviews
-
 end
+
