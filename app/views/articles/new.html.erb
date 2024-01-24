@@ -1,0 +1,13 @@
+
+
+
+<%= form_with model: @article, data: { controller: "editor" } do |t| %>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  <%= t.label :background %>
+  <%= t.file_field :background %>
+  <div id="article_content" data_editor_target="article_content">
+
+  </div>
+  <%= t.submit %>
+<% end %>

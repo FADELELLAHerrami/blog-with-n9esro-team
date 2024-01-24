@@ -10,6 +10,7 @@ gem "sprockets-rails"
 # news-api
 gem 'news-api', '~> 0.0.0'
 
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -26,7 +27,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+# gem "jbuilder"
 # Gemfile
 gem "devise"
 

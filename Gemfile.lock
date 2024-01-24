@@ -156,9 +156,6 @@ GEM
     irb (1.11.1)
       rdoc
       reline (>= 0.4.2)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.7.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -344,7 +341,6 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   http (~> 3.0)
   importmap-rails
-  jbuilder
   json (~> 2.6, >= 2.6.3)
   news-api (~> 0.0.0)
   pg (~> 1.1)
