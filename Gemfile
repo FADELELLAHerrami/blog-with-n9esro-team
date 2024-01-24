@@ -10,7 +10,6 @@ gem "sprockets-rails"
 # news-api
 gem 'news-api', '~> 0.0.0'
 
-
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
