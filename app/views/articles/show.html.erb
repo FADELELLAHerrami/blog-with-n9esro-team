@@ -1,0 +1,8 @@
+<h1><%= @article.title %></h1>
+
+<div>
+  <strong>Content:</strong>
+  <div id="article_content_display">
+    <%= render_article_content(@article.body) %>
+  </div>
+</div>

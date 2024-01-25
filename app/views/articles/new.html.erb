@@ -1,13 +1,27 @@
 
 
 
-<%= form_with model: @article, data: { controller: "editor" } do |t| %>
-  <%= t.label :title %>
-  <%= t.text_field :title %>
-  <%= t.label :background %>
-  <%= t.file_field :background %>
-  <div id="article_content" data-editor-target="articleContent">
 
+
+
+<%= form_with model: @article, data: { controller: "editor" } do |t| %>
+
+
+  <div>
+    <%= t.label :title, style: "display: block" %>
+    <%= t.text_field :title %>
   </div>
-  <%= t.submit %>
+
+  <%= t.hidden_field :body, id: 'article_content_hidden' %>
+
+  <div
+      id="article_content"
+      data-editor-target="article_content"
+  >
+  <%# Needs to have the article content if it exists already %>
+  </div>
+
+  <div>
+    <%= t.submit %>
+  </div>
 <% end %>

@@ -157,6 +157,24 @@ GEM
       rdoc
       reline (>= 0.4.2)
     json (2.7.1)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
+    libv8 (3.16.14.19.1)
+    libv8 (3.16.14.19.1-arm-linux)
+    libv8 (3.16.14.19.1-universal-darwin)
+    libv8 (3.16.14.19.1-x86-linux)
+    libv8 (3.16.14.19.1-x86_64-darwin)
+    libv8 (3.16.14.19.1-x86_64-linux)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -247,6 +265,7 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    ref (2.0.0)
     regexp_parser (2.9.0)
     reline (0.4.2)
       io-console (~> 0.5)
@@ -295,6 +314,9 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (1.3.0)
     tilt (2.3.0)
     timeout (0.4.1)
@@ -337,11 +359,13 @@ DEPENDENCIES
   devise
   dotenv-rails
   error_highlight (>= 0.4.0)
+  execjs
   faker
   font-awesome-sass (~> 6.1)
   http (~> 3.0)
   importmap-rails
   json (~> 2.6, >= 2.6.3)
+  kaminari
   news-api (~> 0.0.0)
   pg (~> 1.1)
   puma (>= 5.0)
@@ -353,6 +377,7 @@ DEPENDENCIES
   simple_form!
   sprockets-rails
   stimulus-rails
+  therubyracer
   turbo-rails
   tzinfo-data
   web-console

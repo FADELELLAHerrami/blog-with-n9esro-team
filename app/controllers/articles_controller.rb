@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.page(params[:page]).per(10)
   end
 
   def show
@@ -29,10 +29,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new(article_params)
-    article.user = current_user
-    if article.save!
-      redirect_to article_path(article)
+    @article = Article.new(article_params)
+    @article.user = current_user
+    if @article.save!
+      redirect_to article_path(@article)
     else
       render :new, status: :unprocessable_entity
     end

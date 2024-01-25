@@ -9,94 +9,6 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
       <!-- Bootstrap Core CSS -->
-
-    <!-- Custom CSS -->
-    <style>
-        body {
-            padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-        }
-
-        footer {
-            margin: 50px 0;
-            background-color: red
-        }
-
-        @media (min-width: 1200px) {
-          .container {
-            width: 750px;
-          }
-        }
-
-        /* navigation */
-        nav {
-            text-transform: uppercase;
-        }
-
-        .navbar-inverse .navbar-brand {
-            color: white;
-            font-weight: bold;
-            font-size: 25px;
-        }
-
-        .navbar-inverse .navbar-nav>li>a {
-            color: white;
-        }
-
-        /* Posts */
-        .post-title {
-            font-size: 3em;
-        }
-
-        .post-title a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .btn {
-            border-radius: 0;
-        }
-
-        .pager li>a {
-            color: inherit;
-            border-radius: 0;
-            border: 0;
-            padding: 0.9em 1.4em;
-        }
-
-        /* Login, Sign up, New post */
-        .login,
-        .signup {
-            margin-top: 20px;
-        }
-
-        .login h1,
-        .signup h1,
-        .newpost h1 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .login .form-control,
-        .signup .form-control,
-        .newpost .form-control {
-            border-radius: 0;
-        }
-
-        .login button,
-        .signup button {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .form-group label {
-            font-weight: normal;
-        }
-
-        .newpost textarea {
-            max-width: 100%;
-        }
-    </style>
   </head>
 
   <body>
@@ -105,4 +17,5 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
   </body>
+  
 </html>

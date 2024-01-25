@@ -24,10 +24,7 @@ params = {
 
 response = HTTP.get(url, params: params)
 
-
 data = JSON.parse(response.body)
-
-articles = data['articles'].first(10)
 
 data['articles'].each do |article_data|
 
@@ -37,7 +34,8 @@ data['articles'].each do |article_data|
     title: article_data['title'],
     background: article_data['urlToImage'],
     user_id: user.id,
-    body: article_data['content']
+    overview: article_data['description'],
+    body: article_data['description']
   )
   puts "#{article.title} created"
 end
