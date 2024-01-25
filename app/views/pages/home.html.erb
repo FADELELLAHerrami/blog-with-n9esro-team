@@ -9,24 +9,24 @@
 </div>
 <div class="container">
 
-<div class="body-info">
-  <div class="stories">
-    <h3> Top stories </h3>
+  <div class="body-info">
+    <div class="stories">
+      <h3> Top stories </h3>
 
-      <%= render 'article-top-stories' %>
-  </div>
-  <div class="discussions">
-    <h3> happening now </h3>
-    <div class="active-discussion">
-      <%= render 'article-active-discussions'%>
+        <%= render 'article-top-stories' %>
     </div>
-    <div class="active-discussion mt-3">
-      <%= render '#tech'%>
+    <div class="discussions">
+      <h3> happening now </h3>
+      <div class="active-discussion">
+        <%= render 'article-active-discussions'%>
+      </div>
+      <div class="active-discussion mt-3">
+        <%= render '#tech'%>
+      </div>
+      <div class="active-discussion mt-3">
+        <%= render '#food' %>
+      </div>
     </div>
-    <div class="active-discussion mt-3">
-      <%= render '#food' %>
-    </div>
-  </div>
 
-</div>
+  </div>
 </div>

@@ -1,12 +1,15 @@
 <nav class= "my-navbar">
   <div class="my-navbar-left">
     <%= link_to root_path do%>
-      <h3>Blog</h3>
+    <div class="logo">
+      <img src="https://img.freepik.com/free-vector/quill-pen-logo-design_23-2149919606.jpg" alt="" class="nav-img">
+      <h2>Elevate</h2>
+    </div>
     <%end%>
   </div>
 
   <div class="my-navbar-middle">
-    <%= form_tag articles_path, method: :get, class: "d-flex" do %>
+    <%= form_tag articles_path, method: :get, class: "form-mine d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -21,7 +24,7 @@
       <%# small avatar of current session %>
       <%# image_tag current_user.avatar, class: "avatar" %>
       <%= link_to "New Article", new_article_path, class: "green-button" %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "green-button" %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete , class: "rounded-red-button" %>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "green-button" %>
       <%= link_to "Signup", new_user_registration_path, class: "green-button" %>
