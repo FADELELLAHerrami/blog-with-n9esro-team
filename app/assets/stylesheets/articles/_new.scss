@@ -1,80 +1,8 @@
-// app/assets/stylesheets/application.scss
+.textArea {
+  width: auto;
+  
+  .article-content{
+    width: 80%;
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #333; // Couleur de texte plus foncée
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ddd; // Bordure plus légère
-  border-radius: 4px;
-  font-size: 16px;
-  color: #555;
-}
-
-.btn {
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  transition: background-color 0.3s ease; // Ajout d'une transition pour un effet plus fluide
-
-  &:hover {
-    background-color: #0056b3;
-  }
-}
-// app/assets/stylesheets/application.scss
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #333; // Darker text color
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ddd; // Default border
-  border-radius: 4px;
-  font-size: 16px;
-  color: #555;
-
-  // Remove border
-  &:not([type="file"]) {
-    border: none;
-    border-radius: 0; // Optional: Set border-radius to 0 for consistency
-    border-bottom: 1px solid #ddd; // If you want a bottom border, you can add it
-    box-shadow: none;
-  }
-}
-.no-border {
-  border: none;
-  border-radius: 0; // Optional: Set border-radius to 0 for consistency
-  box-shadow: none;
-
-  &:focus {
-    border-radius: 0 !important;
-    outline: none !important;
-    border: none !important;
-    border-color: transparent !important; // Set the border color to transparent when focused
-    box-shadow: none !important;
   }
 }
