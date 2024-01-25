@@ -3,9 +3,19 @@ import EditorJS from "@editorjs/editorjs"
 
 
 // plugins
+import Quote from "@editorjs/quote";
+import Warning from "@editorjs/warning";
+import CodeTool from "@editorjs/code";
+import Checklist from "@editorjs/checklist";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
+import ImageTool from "@editorjs/image";
 import Paragraph from "@editorjs/paragraph";
+import Marker from "@editorjs/marker";
+import Delimiter from "@editorjs/delimiter";
+import Table from "@editorjs/table";
+
+
 
 // Connects to data-controller="editor"
 export default class extends Controller {
@@ -27,6 +37,22 @@ export default class extends Controller {
             class: Paragraph,
             config: {
               inlineToolbar: true,
+            },
+          },
+          code: CodeTool,
+          checklist: Checklist,
+          quote: Quote,
+          warning: Warning,
+          marker: Marker,
+          delimiter: Delimiter,
+          table: Table,
+          image: {
+            class: ImageTool,
+            config: {
+              endpoints: {
+                byFile: `/articles/upload_image`,
+              },
+
             },
           },
         },
@@ -53,7 +79,7 @@ export default class extends Controller {
     const hiddenInput = document.getElementById('article_content_hidden');
 
     hiddenInput.value = JSON.stringify(outputData);
-    console.log(hiddenInput.value);
+    console.log(JSON.stringify(outputData));
     articleForm.submit(); // Ajoutez les parenthèses ici
   }
 
