@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    @articles = Article.page(params[:page]).per(10)
+    if params[:query].present?
+      @articles = Article.where(title: params[:query]).page(params[:page]).per(10)
+    else
+      @articles = Article.page(params[:page]).per(10)
+    end
   end
 
   def show
@@ -29,6 +33,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save!
