@@ -2,6 +2,34 @@
 <div class="container text_area mt-3">
 
 
+<div class="mt-3">
+<div class="container">
+
+   <div class ="image">
+    <%# background %>
+     <img src="<%= @article.background %>" style="aspect-ratio: auto 1000 / 420;" width="1000" height="420"  alt="Cover image for Background💪🏼">
+   </div>
+   <div>
+     <div class="">
+            <div >
+              <div class="relative mt-2">
+                <%# image de profil %>
+                <div >
+                    <a href=""><img class="image " src="https://media.dev.to/cdn-cgi/image/width=50,height=50,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F551686%2Ff0514090-260b-4a34-89b0-a2b6e922d5ec.jpg" width="40" height="40" alt=""></a>
+                </div>
+                <%# uer info %>
+                <div class=" ">
+                  <a href="" class="crayons-link fw-bold"><%= @article.user.firstName %> <%= @article.user.lastName %></a>
+                  <p class="fs-xs color-base-60">
+                      Posted on <time datetime="2024-01-19T12:06:18Z" class="date-no-year" title="vendredi 19 janvier 2024 à 13:06:18">Jan 21</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <%# title  %>
+            <h1 class="fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-2 medium">
+              <%= @article.title %>
+            </h1>
    <div class="main_area" >
      <div class="text_area">
         <div class ="article-image">
@@ -27,13 +55,8 @@
           </h1>
             <p><em><span style="color: #808080;">Updated January 2nd, 2024</span></em></p>
           <div  class="px-4 pt-1 crayons-article__body text-styles spec__body " >
-            <%= @article.body %>
-            <%= @article.body %>
-            <%= @article.body %>
-            <%= @article.body %>
-            <%= @article.body %>
-            <%= @article.body %>
-            <%= @article.body %>
+            <%= render_article_content(@article.body) %>
+
           </div>
         </div>
         <%# comment %>
