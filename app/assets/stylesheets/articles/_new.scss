@@ -5,4 +5,11 @@
     width: 80%;
 
   }
+  &::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: red;
+  }
+
 }
+
