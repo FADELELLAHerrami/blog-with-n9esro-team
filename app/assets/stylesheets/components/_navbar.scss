@@ -1,13 +1,30 @@
-nav {
-  text-transform: uppercase;
+.yellow-button {
+  background-color: #f1c40f;
+  border-color: #f1c40f;
+  color: #fff;
+  &:hover {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: #fff;
+  }
 }
 
-.navbar-inverse .navbar-brand {
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
+.my-navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  .my-navbar-left {
+    flex: 0.5;
+    justify-content: flex-start;
+  }
+  .my-navbar-right {
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .my-navbar-right-item {
+      margin-left: 20px;
+    }
+  }
 }
 
-.navbar-inverse .navbar-nav>li>a {
-  color: white;
-}

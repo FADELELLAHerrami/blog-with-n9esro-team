@@ -1,1 +1,80 @@
 // Specific CSS for your home-page
+.top-stories {
+  display: flex;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid wheat;
+  /* padding: 10px; */
+  /* margin: 5px; */
+}
+
+.image-container{
+  background-image: url('https://media.istockphoto.com/id/1337022863/vector/minimal-creative-yellow-background-with-blurred-pattern.jpg?s=612x612&w=0&k=20&c=0bCofikbqWKNiYmSie-vit3gFp2kkV6MscMsiT5yOms=');
+  background-size: cover;
+  padding: 150px;
+}
+
+// to change bookmark color
+// .fa-solid{
+//   color: yellow;
+// }
+
+.active-info{
+  margin-left: 10px;
+  background-color: white;
+  border: 1px solid wheat;
+  .content{
+    display: inline-block;
+    margin: 5px;
+  }
+
+}
+
+.container{
+  margin-top: 20px;
+}
+
+
+.bookmark {
+  margin-right: 10px;
+
+  a{
+    color: inherit;
+  }
+}
+
+
+.body-info{
+  display: flex;
+  gap: 20px;
+
+  .stories{
+    flex: 2;
+  }
+
+  .discussions{
+    flex: 0.75;
+  }
+
+  .left-navbar{
+    flex: 0.5;
+  }
+}
+
+
+.rounded-dark-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.slogan{
+  margin-bottom: 20px;
+
+}
