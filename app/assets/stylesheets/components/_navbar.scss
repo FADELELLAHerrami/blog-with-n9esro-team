@@ -1,13 +1,10 @@
-nav {
-  text-transform: uppercase;
-}
-
-.navbar-inverse .navbar-brand {
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-  color: white;
+.yellow-button {
+  background-color: #f1c40f;
+  border-color: #f1c40f;
+  color: #fff;
+  &:hover {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: #fff;
+  }
 }
