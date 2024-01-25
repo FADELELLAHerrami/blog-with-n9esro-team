@@ -1,9 +1,3 @@
-
-
-
-
-
-
     <!-- Page Content -->
     <div class="container" data-controller="hello">
 
@@ -53,7 +47,7 @@
               <%=article.user.firstName%> <%=article.user.lastName%>
             </div>
             <div class="date-written">
-              <%=article.created_at%>
+              <%= time_ago_in_words(article.created_at) %> ago
             </div>
           </div>
         </div>
@@ -92,7 +86,9 @@
     <%end%>
 
   </article>
-</div>
-<div class="digg_pagination">
-      <%= paginate @articles %>
+  <div class="center">
+    <div class="digg_pagination">
+        <%= paginate @articles %>
+    </div>
+  </div>
 </div>
