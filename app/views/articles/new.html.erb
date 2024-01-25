@@ -2,26 +2,30 @@
 
 
 
+<div class="container">
+  <div class="card p-5 bg-white">
+      <%= form_with model: @article, data: { controller: "editor" } do |t| %>
 
+        <div class="form-group btn btn-secondary btn-lg w-100 ">
+          <%= t.label :background, class: "file-upload-btn btn" do %>
+            <p class="text-white" style="font-family: 'Roboto', sans-serif;font-size: 30px;">Add a cover image here</p>
+            <%= t.file_field :background, class: "", id: "file-upload" %>
+          <% end %>
+        </div>
 
-<%= form_with model: @article, data: { controller: "editor" } do |t| %>
+        <div class="form-group">
+          <%= t.text_field :title, placeholder: "New post title here ...", class: "no-border border-0", style: "outline: none;" %>
+        </div>
+        <%= t.hidden_field :body, id: 'article_content_hidden' %>
 
+        <div id="article_content" data-editor-target="article_content" style="padding:0; margin: 0;">
+          <%# Needs to have the article content if it exists already %>
+        </div>
 
-  <div>
-    <%= t.label :title, style: "display: block" %>
-    <%= t.text_field :title %>
+        <div class="form-group">
+          <%= t.submit class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
   </div>
-
-  <%= t.hidden_field :body, id: 'article_content_hidden' %>
-
-  <div
-      id="article_content"
-      data-editor-target="article_content"
-  >
-  <%# Needs to have the article content if it exists already %>
-  </div>
-
-  <div>
-    <%= t.submit %>
-  </div>
-<% end %>
+</div>
