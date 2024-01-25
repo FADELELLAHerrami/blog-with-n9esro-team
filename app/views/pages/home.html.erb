@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="image-container">
+    <div class="slogan">
+      <h1>Elevate Your Thoughts, Illuminate Your Words.</h1>
+      <p>Unlocking Ideas, Empowering Voices: Your Journey in Every Word</p>
+    </div>
+    <div class="button">
+      <a href="" class="rounded-dark-button"> Start Reading</a>
+    </div>
+</div>
+<div class="container">
+
+<div class="body-info">
+  <div class="stories">
+    <h3> Top stories </h3>
+
+      <%= render 'article-top-stories' %>
+  </div>
+  <div class="discussions">
+    <h3> happening now </h3>
+    <div class="active-discussion">
+      <%= render 'article-active-discussions'%>
+    </div>
+    <div class="active-discussion mt-3">
+      <%= render '#tech'%>
+    </div>
+    <div class="active-discussion mt-3">
+      <%= render '#food' %>
+    </div>
+  </div>
+
+</div>
+</div>
