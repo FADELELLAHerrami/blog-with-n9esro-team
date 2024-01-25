@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     if @article.save!
       redirect_to article_path(@article)
+
     else
       render :new, status: :unprocessable_entity
     end
