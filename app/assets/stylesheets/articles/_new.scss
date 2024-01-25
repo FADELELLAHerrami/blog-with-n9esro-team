@@ -77,4 +77,11 @@
     border-color: transparent !important; // Set the border color to transparent when focused
     box-shadow: none !important;
   }
+  &::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: red;
+  }
+
 }
+

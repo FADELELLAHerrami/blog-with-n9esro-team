@@ -8,8 +8,8 @@
 
         <div class="form-group btn btn-secondary btn-lg w-100 ">
           <%= t.label :background, class: "file-upload-btn btn" do %>
-            <p class="text-white" style="font-family: 'Roboto', sans-serif;font-size: 30px;">Add a cover image here</p>
-            <%= t.file_field :background, class: "", id: "file-upload" %>
+            <label for="file-upload" class="text-white" style="font-family: 'Roboto', sans-serif;font-size: 30px;">Add a cover image here</label>
+            <%= t.file_field :background, id: "file-upload", class:"btn", style:"display: none;"  %>
           <% end %>
         </div>
 
@@ -18,7 +18,8 @@
         </div>
         <%= t.hidden_field :body, id: 'article_content_hidden' %>
 
-        <div id="article_content" data-editor-target="article_content" style="padding:0; margin: 0;">
+        <div id="article_content" data-editor-target="article_content" style="padding:0; margin: 0;font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;" class="editor-container">
           <%# Needs to have the article content if it exists already %>
         </div>
 
