@@ -20,11 +20,16 @@
           <div  class="px-4 pt-1 crayons-article__body text-styles spec__body " >
             <%= render_article_content(@article.body) %>
           </div>
-          <div class="mb-3 a">
-          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <button class="custom-btn btn-1 mt-2">Add Comment</button>
+          <%# comment %>
+          <div class="mb-3">
+              <form action="/comments" method="POST">
+                  <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
+                  <textarea class="form-control" name="comment[content]" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <input type="hidden" name="comment[article_id]" class="custom-btn btn-1 mt-2" value="<%= @article.id %>"/>
+                  <input type="submit" class="custom-btn btn-1 mt-2" value="Add comment "/>
+              </form>
         </div>
+          <%# comment %>
         <div class="comment">
           <h4>Comments</h4>
           <%# simple input field to add a comment without article build%>
@@ -36,7 +41,7 @@
                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
                         <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
                           <div class="g-mb-15">
-                            <h5 class="h5 g-color-gray-dark-v1 mb-0"><%= comment.user.firstName   %></h5>
+                            <h5 class="h5 g-color-gray-dark-v1 mb-0"><%= comment.user.firstName %> <%= comment.user.lastName   %> <%= comment.user.id   %></h5>
                             <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
                           </div>
                           <%# comment  %>
@@ -68,16 +73,5 @@
             </div>
             </div>
         </div>
-        <%#  input fot comment  %>
-       <div class="mb-3">
-        <form action="/comments" method="POST">
-          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
-          <textarea class="form-control" name="comment[content]" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <input type="hidden" name="comment[article_id]" class="custom-btn btn-1 mt-2" value="<%= @article.id %>"/>
-          <input type="submit" class="custom-btn btn-1 mt-2" value="Add comment "/>
-        </form>
-
-        </div>
-
       </div>
 </div>
