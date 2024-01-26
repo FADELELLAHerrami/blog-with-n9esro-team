@@ -1,6 +1,6 @@
 # app/controllers/comments_controller.rb
 class CommentsController < ApplicationController
-  before_action :set_article
+  skip_before_action :verify_authenticity_token
   before_action :set_comment, only: [:edit, :update, :destroy]
 
   def index
@@ -13,10 +13,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.article = @article
+    @comment.user = current_user
 
     if @comment.save
-      redirect_to article_path(@article), notice: 'Comment was successfully created.'
+      redirect_to article_path(@comment.article), notice: 'Comment was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -50,6 +50,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:comment) # Assuming the comment model has a 'body' attribute
+    params.require(:comment).permit(:content, :article_id) # Assuming the comment model has a 'body' attribute
   end
 end

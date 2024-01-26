@@ -68,6 +68,15 @@
             </div>
             </div>
         </div>
+        <%#  input fot comment  %>
+       <div class="mb-3">
+        <form action="/comments" method="POST">
+          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
+          <textarea class="form-control" name="comment[content]" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <input type="hidden" name="comment[article_id]" class="custom-btn btn-1 mt-2" value="<%= @article.id %>"/>
+          <input type="submit" class="custom-btn btn-1 mt-2" value="Add comment "/>
+        </form>
+
         </div>
 
       </div>
