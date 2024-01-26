@@ -3,7 +3,7 @@
 
 
 <div class="container">
-  <div class="card p-5 bg-white">
+  <div class="card p-5 bg-white w-100">
       <%= form_with model: @article, data: { controller: "editor" } do |t| %>
 
         <div class="form-group btn btn-secondary btn-lg w-100 ">
@@ -19,7 +19,7 @@
         <%= t.hidden_field :body, id: 'article_content_hidden' %>
 
         <div id="article_content" data-editor-target="article_content" style="padding:0; margin: 0;font-family: 'Poppins', sans-serif;
-font-family: 'Roboto', sans-serif;" class="editor-container">
+        font-family: 'Roboto', sans-serif;width: auto;" class="editor-container">
           <%# Needs to have the article content if it exists already %>
         </div>
 
