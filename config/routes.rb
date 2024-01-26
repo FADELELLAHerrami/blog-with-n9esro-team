@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :users, only: [:show]
   resources :articles do
+    collection do
+      get :top
+    end
     resources :reviews, only: [:create, :edit, :new]
     resources :collaborations, only: [:create, :new, :destroy]
   end
