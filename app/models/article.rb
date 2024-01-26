@@ -3,8 +3,7 @@ include ActionView::Helpers::DateHelper
 class Article < ApplicationRecord
   has_one_attached :photo
   paginates_per 10
-  has_many :collaborations
-  has_many :users, through: :collaborations
+  has_many :comments
+  has_many :users, through: :comments
   belongs_to :user
-  has_many :reviews
 end
