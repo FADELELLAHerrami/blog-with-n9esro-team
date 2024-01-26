@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :photo
   has_many :comments
   has_many :articles, through: :comments
   has_many :articles
