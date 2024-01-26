@@ -1,7 +1,4 @@
 
-
-
-
 <div class="container">
   <div class="card p-5 bg-white w-100">
       <%= form_with model: @article, data: { controller: "editor" } do |t| %>
@@ -14,19 +11,22 @@
         </div>
 
         <div class="form-group">
-          <%= t.text_field :title, placeholder: "New post title here ...", class: "no-border border-0", style: "outline: none;" %>
+          <%= t.text_field :title, placeholder: "New post title here ...", class: "no-border border-0", style: "font-size: 40px;outline: none; width: 100%;" %>
         </div>
-        <%= t.hidden_field :body, id: 'article_content_hidden' %>
+
+        <div class="textArea">
+          <%= t.hidden_field :body, id: 'article_content_hidden' %>
 
         <div id="article_content" data-editor-target="article_content" style="padding:0; margin: 0;font-family: 'Poppins', sans-serif;
         font-family: 'Roboto', sans-serif;width: auto;" class="editor-container">
           <%# Needs to have the article content if it exists already %>
         </div>
 
+      </div>
         <div class="form-group">
-          <%= t.submit class: "btn btn-primary" %>
+          <%= t.submit class: "rounded-dark-button mt-2", value: "Publish" %>
         </div>
 
       <% end %>
-  </div>
+
 </div>
