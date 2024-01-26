@@ -1,0 +1,24 @@
+<div class="profile">
+  <h1>User Profile</h1>
+  <div class="user-info">
+    <p><strong>Name:</strong> <%= @user.firstName %></p>
+    <p><strong>Email:</strong> <%= @user.email %></p>
+    <p><strong>Created Articles:</strong> <%= @user.articles.count %></p>
+  </div>
+
+
+  <div class="created-articles">
+    <h2>Created Articles</h2>
+    <% if @user.articles.any? %>
+      <% @user.articles.each do |article| %>
+        <div class="article">
+            <h3><%= article.title %></h3>
+            <p><%= article.content %></p>
+                  </div>
+      <% end %>
+    <% else %>
+      <p>There are no created articles.</p>
+    <% end %>
+  </div>
+
+</div>
