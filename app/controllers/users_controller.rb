@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @articles = @user.articles
     # @reviews = @user.reviews
-    @collaborations = @user.collaborations
   end
 
   private
