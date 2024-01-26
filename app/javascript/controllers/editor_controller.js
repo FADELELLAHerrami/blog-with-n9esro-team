@@ -63,10 +63,21 @@ export default class extends Controller {
 
   getInitialContent() {
     const hiddenInput = document.getElementById('article_content_hidden');
-    if(hiddenInput && hiddenInput.value){
-      return JSON.parse(hiddenInput.value)
-    }else{
-      return {}
+    if (hiddenInput && hiddenInput.value) {
+      return JSON.parse(hiddenInput.value);
+    } else {
+      // Set a default content here to act as a placeholder
+      return {
+        blocks: [
+          {
+            type: 'paragraph',
+            data: {
+              text: 'New post content here...',
+              placeholder: true,
+            },
+          },
+        ],
+      };
     }
   }
 
