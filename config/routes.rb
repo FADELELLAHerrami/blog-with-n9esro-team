@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :collaborations, only: [:create, :new, :destroy]
   end
   resources :reviews, only: [:destroy]
+  resources :users, only: [:show, :edit, :update, :drop]
 end

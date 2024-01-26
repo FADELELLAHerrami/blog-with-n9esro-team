@@ -1,24 +1,47 @@
-<div class="profile">
-  <h1>User Profile</h1>
-  <div class="user-info">
-    <p><strong>Name:</strong> <%= @user.firstName %></p>
-    <p><strong>Email:</strong> <%= @user.email %></p>
-    <p><strong>Created Articles:</strong> <%= @user.articles.count %></p>
+<div class="">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-7" style="width: 100%; height: 100%;">
+      <div class="card">
+        <div class="text-center mt-3">
+          <h5 class="mt-2 mb-0"><%= @user.firstName %> <%= @user.lastName %></h5>
+          <span>Actor, director and producer</span>
+          <div class="px-4 mt-1">
+            <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <ul class="social-list">
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-github"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-google"></i></li>
+          </ul>
+          <div class="buttons">
+            <button class="btn btn-outline-primary px-4">Contact</button>
+            <button class="btn btn-primary px-4 ms-3">Give feedback</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-  <div class="created-articles">
-    <h2>Created Articles</h2>
-    <% if @user.articles.any? %>
-      <% @user.articles.each do |article| %>
-        <div class="article">
-            <h3><%= article.title %></h3>
-            <p><%= article.content %></p>
-                  </div>
-      <% end %>
-    <% else %>
-      <p>There are no created articles.</p>
-    <% end %>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="active-info">
+        <h3>Posts</h3>
+        <% if @user.articles.any? %>
+          <% @user.articles.each do |article| %>
+            <h3><%= link_to article.title, article_path(article) %></h3>
+          <% end %>
+        <% else %>
+          <h4>No articles available</h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      Feedbacks
+    </div>
   </div>
-
 </div>
