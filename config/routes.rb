@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :reviews, only: [:create, :edit, :new]
     resources :collaborations, only: [:create, :new, :destroy]
+    resources :comments , except: [:show]
   end
   resources :reviews, only: [:destroy]
   resources :users, only: [:show, :edit, :update, :drop]
