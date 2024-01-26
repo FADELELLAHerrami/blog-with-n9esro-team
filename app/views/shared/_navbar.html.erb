@@ -1,15 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mt-0">
-  <div class="collapse navbar-collapse d-flex justify-content-between px-5" id="navbarSupportedContent">
-    <div class="d-flex justify-content-between align-item-center">
-      <%= link_to 'Blog', root_path, class: 'navbar-brand m-0' %>
-      <%= form_tag('#', method: 'get', class: 'd-flex form-inline my-2 my-lg-0') do %>
-        <%= text_field_tag 'search', nil, class: 'form-control mr-sm-2', placeholder: 'Search', 'aria-label' => 'Search' %>
-        <%= button_tag 'Search', type: 'submit', class: 'btn btn-outline-success my-2 my-sm-0' %>
-      <% end %>
+<nav class= "my-navbar">
+  <div class="my-navbar-left">
+    <%= link_to root_path do%>
+    <div class="logo">
+      <img src="https://img.freepik.com/free-vector/quill-pen-logo-design_23-2149919606.jpg" alt="" class="nav-img">
+      <h2>Elevate</h2>
     </div>
-    <div class="ml-auto d-flex justfy-content-center align-item-center">
-      <%= link_to 'Login', '#', class: 'btn btn-link' %>
-      <%= link_to 'Create account', '#', class: 'btn btn-outline-primary' %>
-    </div>
+    <%end%>
+  </div>
+
+  <div class="my-navbar-middle">
+    <%= form_tag articles_path, method: :get, class: "form-mine d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type the article"
+      %>
+    <%= submit_tag "Search", name: "", class: "yellow-button" %>
+    <% end %>
+  </div>
+
+  <div class="my-navbar-right">
+    <% if user_signed_in? %>
+      <%# small avatar of current session %>
+      <%# image_tag current_user.avatar, class: "avatar" %>
+      <%= link_to "New Article", new_article_path, class: "green-button" %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete , class: "rounded-red-button" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "green-button" %>
+      <%= link_to "Signup", new_user_registration_path, class: "green-button" %>
+    <% end %>
   </div>
 </nav>
