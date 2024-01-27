@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :users, only: [:show]
   resources :articles do
+    collection do
+      get :top
+    end
     resources :reviews, only: [:create, :edit, :new]
     resources :collaborations, only: [:create, :new, :destroy]
-    resources :comments , except: [:show]
   end
   resources :reviews, only: [:destroy]
   resources :users, only: [:show, :edit, :update, :drop]
+  resources :comments , except: [:show]
 end
