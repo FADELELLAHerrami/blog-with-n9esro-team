@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:destroy]
   resources :users, only: [:show, :edit, :update, :drop]
-  resources :comments , except: [:show]
+  resources :comments, except: [:show]
 end
