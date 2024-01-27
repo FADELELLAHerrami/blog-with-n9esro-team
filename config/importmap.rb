@@ -45,3 +45,4 @@ pin "sys" # @2.0.1
 pin "url" # @2.0.1
 pin "util" # @2.0.1
 pin "zlib" # @2.0.1
+pin "el-transition" # @0.0.7
