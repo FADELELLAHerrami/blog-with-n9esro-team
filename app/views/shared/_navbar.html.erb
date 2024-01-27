@@ -31,7 +31,7 @@
           <div class="dropdown" data-controller="dropdown">
             <input type="image" src= <%=image%> class="avatar" data-action="click->dropdown#toggle" />
             <div class="menu d-none" data-dropdown-target="menu">
-              <h3>Someone Famous<br /><span>Website Designer</span></h3>
+              <h3><%= current_user.firstName%> <%= current_user.lastName%><br /><span>Website Designer</span></h3>
               <ul>
 
                   <li>
