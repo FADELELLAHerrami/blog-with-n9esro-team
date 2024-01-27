@@ -41,7 +41,7 @@
                   <%= link_to "Edit profile", edit_user_registration_path %>
                 </li>
                 <li>
-                  <%= link_to "My articles", articles_path(query: params[:query], author: current_user) %>
+                  <%= link_to "My articles", articles_path(author: current_user) %>
                 </li>
                 <li>
                   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
