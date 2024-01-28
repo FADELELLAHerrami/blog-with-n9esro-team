@@ -112,7 +112,7 @@ export default class extends Controller {
 
     hiddenInput.value = JSON.stringify(outputData);
     console.log(JSON.stringify(outputData));
-    // articleForm.submit(); // Ajoutez les parenthèses ici
+    articleForm.submit(); // Ajoutez les parenthèses ici
   }
 
 }
