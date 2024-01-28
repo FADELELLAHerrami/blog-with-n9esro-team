@@ -49,10 +49,31 @@ export default class extends Controller {
           image: {
             class: ImageTool,
             config: {
-              endpoints: {
-                byFile: `/articles/upload_image`,
+              uploader: {
+                /**
+                 * @param {File} file - file containing data
+                 * @return {Promise<{default: string, files: {default: {url: string}}}>}
+                 */
+                uploadByFile(file) {
+                  return fetch("/articles/upload_image", {
+                    method: "POST",
+                    body: file,
+                  })
+                    .then(response => response.json())
+                    .then(result => {
+                      return {
+                        default: result.secure_url,
+                        files: {
+                          default: { url: result.secure_url }
+                        }
+                      };
+                    })
+                    .catch(error => {
+                      console.error("Error uploading image:", error);
+                      throw error;
+                    });
+                }
               },
-
             },
           },
         },
@@ -91,7 +112,7 @@ export default class extends Controller {
 
     hiddenInput.value = JSON.stringify(outputData);
     console.log(JSON.stringify(outputData));
-    articleForm.submit(); // Ajoutez les parenthèses ici
+    // articleForm.submit(); // Ajoutez les parenthèses ici
   }
 
 }

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :users, only: [:show]
   resources :articles do
+    post 'upload_image', to: 'articles#upload_image'
     collection do
       get :top
     end
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:destroy]
   resources :users, only: [:show, :edit, :update, :drop]
-  resources :comments , except: [:show]
+  resources :comments, except: [:show]
 end
