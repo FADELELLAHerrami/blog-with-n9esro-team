@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :users, only: [:show]
   resources :articles do
     collection do
       get :top
@@ -10,6 +9,6 @@ Rails.application.routes.draw do
     resources :collaborations, only: [:create, :new, :destroy]
   end
   resources :reviews, only: [:destroy]
-  resources :users, only: [:show, :edit, :update, :drop]
-  resources :comments, except: [:show]
+  resources :users, only: [:show, :edit, :update]
+  resources :comments, only: [:show]
 end

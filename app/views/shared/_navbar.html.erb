@@ -44,12 +44,12 @@
                   <%= link_to "My articles", articles_path(author: current_user) %>
                 </li>
                 <li>
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
                 </li>
               </ul>
             </div>
           </div>
-        <% else %>
+      <% else %>
           <%= link_to "Login", new_user_session_path, class: "green-button" %>
           <%= link_to "Signup", new_user_registration_path, class: "green-button" %>
       <% end %>

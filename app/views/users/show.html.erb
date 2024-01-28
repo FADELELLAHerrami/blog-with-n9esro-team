@@ -8,10 +8,14 @@
       <% end %>
     </div>
     <div class="user-name">
-      <%= @user.firstName %> <%= @user.lastName %>
+     <%= @user.firstName %> <%= @user.lastName %>
     </div>
-    <div class="user-email">
-      <%= @user.email %>
+    <div class="user-bio">
+      <% if @user.bio.present? %>
+        <%= @user.bio %>
+      <% else %>
+        No bio added.
+      <% end %>
     </div>
     <%#  icons of facebook github and linkedin %>
     <div class="icons">
