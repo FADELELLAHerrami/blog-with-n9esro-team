@@ -1,67 +1,53 @@
-<div class="mt-5" >
-
-    <div class="row d-flex justify-content-center" >
-
-        <div class="col-md-7" style="width: 100%; height: 100%;">
-
-
-
-
-
-
-            <div class="card" >
-
-                <div class="text-center">
-
-                  <%= image_tag("10-1.jpg", class: "rounded-circle mt-3", style: "width: 100px;")%>
-                </div>
-
-                <div class="text-center mt-3">
-                    <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span>
-                    <h5 class="mt-2 mb-0">Robert De Niro</h5>
-                    <span>Actor, director and producer</span>
-
-                    <div class="px-4 mt-1">
-                        <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-
-                    </div>
-
-                      <ul class="social-list">
-                        <li><i class="fa-brands fa-facebook"></i></li>
-                        <li><i class="fa-brands fa-github"></i></li>
-                        <li><i class="fa-brands fa-instagram"></i></li>
-                        <li><i class="fa-brands fa-linkedin"></i></li>
-                        <li><i class="fa-brands fa-google"></i></li>
-                      </ul>
-
-                      <div class="buttons">
-
-                        <button class="btn btn-outline-primary px-4">Contact</button>
-                        <button class="btn btn-primary px-4 ms-3">Give feedback</button>
-                      </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-<br>
-<br>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      Posts
+  <div class="article-info">
+    <div class="user-avatar">
+      <% if @user.photo.present? %>
+        <%= image_tag @user.photo %>
+      <% else %>
+        <%= image_tag "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" %>
+      <% end %>
     </div>
-    <div class="col-sm-4">
-      Biography
+    <div class="user-name">
+      <%= @user.firstName %> <%= @user.lastName %>
     </div>
-    <div class="col-sm-4">
-      Feedbacks
+    <div class="user-email">
+      <%= @user.email %>
     </div>
+    <%#  icons of facebook github and linkedin %>
+    <div class="icons">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www,github.com/"><i class="fab fa-github-square"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <div class="user-container">
+    <div class="user-article-info">
+      <h5>Written articles</h5>
+      <hr>
+      <% if @user.articles.empty? %>
+        <div class="no-articles">
+          No articles written.
+        </div>
+      <% else %>
+        <% @user.articles.each do |article|%>
+          <div class="article">
+              <%= article.title %> - <%= article.created_at.strftime("%d/%m/%Y") %>
+            <hr>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+
+    <% if @user == current_user %>
+      <div class="user-article-info">
+        <h5>Saved articles</h5>
+        <hr>
+      </div>
+    <% else %>
+      <div class="article-info" style="display: none;">
+      </div>
+    <% end %>
+
   </div>
 </div>

@@ -14,7 +14,7 @@ module ArticlesHelper
       when 'paragraph'
         "<p>#{block['data']['text']}</p>"
       when 'header'
-        "<h#{block['data']['level']}>#{block['data']['text']}</h#{block['data']['level']}>"
+        "<h1>#{block['data']['text']}</h1>"
       when 'list'
         list_items = block['data']['items'].map { |item| "<li>#{item}</li>" }.join
         "<ul>#{list_items}</ul>"
@@ -45,6 +45,23 @@ module ArticlesHelper
             <figcaption class="centered-content">#{caption}</figcaption>
           </figure>
         HTML
+      when 'table'
+        table_data = block['data'] || {} # Handle missing or nil 'data'
+        content = table_data['content'] || []
+        with_headings = table_data['withHeadings'] || false
+
+        rows = content.map do |row|
+          if with_headings
+            columns = row.map { |cell| "<th>#{cell}</th>" }.join
+            "<tr>#{columns}</tr>"
+          else
+            columns = row.map { |cell| "<td>#{cell}</td>" }.join
+            "<tr>#{columns}</tr>"
+          end
+        end.join
+
+
+        "<table>#{rows}</table>"
       else
         ''
       end
