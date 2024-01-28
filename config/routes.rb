@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :articles do
+    post 'upload_image', to: 'articles#upload_image'
     collection do
       get :top
     end
