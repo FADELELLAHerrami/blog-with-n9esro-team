@@ -23,13 +23,12 @@
     <div class="my-navbar-right">
       <% if user_signed_in? %>
         <%= link_to "New Article", new_article_path, class: "green-button" %>
-          <% if current_user.photo.present? %>
-            <% image = current_user.photo %>
-          <% else %>
-            <% image = "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"%>
-          <% end %>
           <div class="dropdown" data-controller="dropdown">
-            <input type="image" src= <%=image%> class="avatar" data-action="click->dropdown#toggle" />
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag current_user.photo.key , class: 'avatar', 'data-action': 'click->dropdown#toggle' %>
+            <% else %>
+              <%= image_tag "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg", class: 'avatar', 'data-action': 'click->dropdown#toggle' %>
+            <% end %>
             <div class="menu d-none" data-dropdown-target="menu">
               <h3><%= current_user.firstName%> <%= current_user.lastName%><br /><span>Website Designer</span></h3>
               <ul>
