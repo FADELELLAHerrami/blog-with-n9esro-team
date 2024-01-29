@@ -3,13 +3,11 @@
   <div class="card p-5 bg-white w-100">
       <%= form_with model: @article, data: { controller: "editor" } do |t| %>
 
-        <div class="form-group btn btn-secondary btn-lg w-100 ">
-          <%= t.label :background, class: "file-upload-btn btn" do %>
-            <label for="file-upload" class="text-white" style="font-family: 'Roboto', sans-serif;font-size: 30px;">Add a cover image here</label>
-            <%= t.file_field :background, id: "file-upload", class:"btn", style:"display: none;"  %>
+        <div class="form-group btn btn-secondary btn-lg w-100">
+          <%= cl_image_upload_tag :photo, class: "btn", id: "file-upload", style: "display: none;", resource_type: "auto" do %>
+            <span class="text-white" style="font-family: 'Roboto', sans-serif; font-size: 30px;">Add a cover image here</span>
           <% end %>
         </div>
-
         <div class="form-group">
           <%= t.text_field :title, placeholder: "New post title here ...", class: "no-border border-0", style: "font-size: 40px;outline: none; width: 100%;" %>
         </div>
