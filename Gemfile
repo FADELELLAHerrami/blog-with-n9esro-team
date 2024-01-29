@@ -34,6 +34,8 @@ gem "stimulus-rails"
 # gem "jbuilder"
 # Gemfile
 gem "devise"
+# pendit for authorization
+gem "pundit"
 
 # json
 gem 'json', '~> 2.6', '>= 2.6.3'
