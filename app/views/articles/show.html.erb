@@ -1,4 +1,8 @@
-   <div class="text_area">
+<div class="main-area mt-4" >
+     <div class="text-area">
+        <%# <div class ="article-image">
+        </div> %>
+          <%# body %>
         <div class ="body pt-3 pb-4 article-info">
           <h1 class="entry-title fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-2 medium">
             <%= @article.title %>
@@ -29,11 +33,6 @@
         <div class="comment">
           <h4>Comments</h4>
           <%# simple input field to add a comment without article build%>
-          <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <button class="custom-btn btn-1 mt-2">Add Comment</button>
-        </div>
           <div class="container">
             <div class="row">
               <% @article.comments.each do |comment|  %>
@@ -74,19 +73,6 @@
             </div>
             </div>
         </div>
-
-        <%#  input fot comment  %>
-       <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <button class="custom-btn btn-1 mt-2">Add Comment</button>
-        </div>
       </div>
-
-
-      <div class="profile-area">
-
-
-
-      </div>
+</div>
 </div>
