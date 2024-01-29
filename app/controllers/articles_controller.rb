@@ -3,14 +3,15 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:query].present?
-      @articles = Article.where(title: params[:query]).page(params[:page]).per(10)
+      @articles = Article.where("title ILIKE ?", "%#{params[:query]}%").page(params[:page]).per(10)
+
     else
       @articles = Article.page(params[:page]).per(10)
     end
   end
 
   def show
-    authorize @article
+
   end
 
   def edit
@@ -25,7 +26,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    authorize @article
     @article.delete
     redirect_to articles_path
   end
