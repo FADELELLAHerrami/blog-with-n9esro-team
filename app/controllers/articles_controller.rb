@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     uploaded_file = params[:file]
 
     # Vérifier que le fichier a été correctement téléchargé
-    if uploaded_file.present? 
+    if uploaded_file.present?
       # Définir le chemin de destination dans le répertoire app/assets/images
       destination_path = Rails.root.join('app', 'assets', 'images', uploaded_file.original_filename)
 
@@ -72,7 +72,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :background)
+    params.require(:article).permit(:title, :body, :background, :photo)
   end
 
   def set_article
