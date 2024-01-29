@@ -34,6 +34,8 @@ gem "stimulus-rails"
 # gem "jbuilder"
 # Gemfile
 gem "devise"
+# pendit for authorization
+gem "pundit"
 
 # json
 gem 'json', '~> 2.6', '>= 2.6.3'
@@ -62,6 +64,7 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "faker"
+gem 'http', '~> 3.0'
 
 group :development, :test do
   gem "dotenv-rails"
@@ -73,7 +76,6 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  gem 'http', '~> 3.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

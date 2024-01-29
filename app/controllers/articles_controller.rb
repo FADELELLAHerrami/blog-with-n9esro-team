@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    authorize @article
   end
 
   def edit
@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     @article.delete
     redirect_to articles_path
   end
@@ -47,25 +48,25 @@ class ArticlesController < ApplicationController
   end
 
   # action to upload image
-  def upload_image
-    uploaded_file = params[:file]
+  # def upload_image
+  #   uploaded_file = params[:file]
 
-    # Vérifier que le fichier a été correctement téléchargé
-    if uploaded_file.present?
-      # Définir le chemin de destination dans le répertoire app/assets/images
-      destination_path = Rails.root.join('app', 'assets', 'images', uploaded_file.original_filename)
+  #   # Vérifier que le fichier a été correctement téléchargé
+  #   if uploaded_file.present?
+  #     # Définir le chemin de destination dans le répertoire app/assets/images
+  #     destination_path = Rails.root.join('app', 'assets', 'images', uploaded_file.original_filename)
 
-      # Écrire le fichier dans le répertoire de destination
-      File.open(destination_path, 'wb') do |file|
-        file.write(uploaded_file.read)
-      end
+  #     # Écrire le fichier dans le répertoire de destination
+  #     File.open(destination_path, 'wb') do |file|
+  #       file.write(uploaded_file.read)
+  #     end
 
-      # Retourner le chemin de l'image téléchargée (par exemple, pour l'afficher dans l'éditeur)
-      render json: { url: ActionController::Base.helpers.asset_path("images/#{uploaded_file.original_filename}") }
-    else
-      render json: { error: 'Invalid file format' }, status: :unprocessable_entity
-    end
-  end
+  #     # Retourner le chemin de l'image téléchargée (par exemple, pour l'afficher dans l'éditeur)
+  #     render json: { url: ActionController::Base.helpers.asset_path("images/#{uploaded_file.original_filename}") }
+  #   else
+  #     render json: { error: 'Invalid file format' }, status: :unprocessable_entity
+  #   end
+  # end
 
 
 
