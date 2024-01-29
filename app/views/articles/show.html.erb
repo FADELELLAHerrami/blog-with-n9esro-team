@@ -1,4 +1,38 @@
+
+<div class="container text_area mt-3">
+
+<div class="mt-3">
+<div class="container">
+
+   <div class ="image">
+    <%# background %>
+     <img src="<%= @article.background %>" style="aspect-ratio: auto 1000 / 420;" width="1000" height="420"  alt="Cover image for Background💪🏼">
+   </div>
+   <div>
+     <div class="">
+            <div >
+              <div class="relative mt-2">
+                <%# image de profil %>
+                <div >
+                    <a href=""><img class="image " src="https://media.dev.to/cdn-cgi/image/width=50,height=50,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F551686%2Ff0514090-260b-4a34-89b0-a2b6e922d5ec.jpg" width="40" height="40" alt=""></a>
+                </div>
+                <%# uer info %>
+                <div class=" ">
+                  <a href="" class="crayons-link fw-bold"><%= @article.user.firstName %> <%= @article.user.lastName %></a>
+                  <p class="fs-xs color-base-60">
+                      Posted on <time datetime="2024-01-19T12:06:18Z" class="date-no-year" title="vendredi 19 janvier 2024 à 13:06:18">Jan 21</time>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <%# title  %>
+            <h1 class="fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-2 medium">
+              <%= @article.title %>
+            </h1>
+   <div class="main_area" >
+
 <div class="main_area mt-4" >
+
      <div class="text_area">
         <div class ="article-image">
         </div>
@@ -33,6 +67,11 @@
         <div class="comment">
           <h4>Comments</h4>
           <%# simple input field to add a comment without article build%>
+          <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <button class="custom-btn btn-1 mt-2">Add Comment</button>
+        </div>
           <div class="container">
             <div class="row">
               <% @article.comments.each do |comment|  %>
@@ -73,5 +112,19 @@
             </div>
             </div>
         </div>
+
+        <%#  input fot comment  %>
+       <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Enter Your Comment</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <button class="custom-btn btn-1 mt-2">Add Comment</button>
+        </div>
+      </div>
+
+
+      <div class="profile-area">
+
+
+
       </div>
 </div>
