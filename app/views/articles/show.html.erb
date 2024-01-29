@@ -20,6 +20,8 @@
           <div  class="px-4 pt-1 crayons-article__body text-styles spec__body " >
             <%= render_article_content(@article.body) %>
           </div>
+        <%= button_to "Destroy this article", @article, method: :delete, class: "btn btn-outline-danger", data: { confirm: 'Are you sure?' }, disabled: !policy(@article).destroy? %>
+
           <%# comment %>
           <div class="mb-3">
               <form action="/comments" method="POST">
@@ -29,6 +31,7 @@
                   <input type="submit" class="custom-btn btn-1 mt-2" value="Add comment "/>
               </form>
         </div>
+
           <%# comment %>
         <div class="comment">
           <h4>Comments</h4>
@@ -76,6 +79,8 @@
               <% end  %>
             </div>
             </div>
+
+
         </div>
       </div>
 </div>
