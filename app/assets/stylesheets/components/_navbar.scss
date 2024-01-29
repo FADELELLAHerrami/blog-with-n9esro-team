@@ -216,6 +216,11 @@ nav {
   transition: 0.5s;
 }
 
+.title-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
 .dropdown .menu ul li button:hover {
   color: #a95252;
 }
