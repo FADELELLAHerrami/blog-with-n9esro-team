@@ -111,6 +111,8 @@
               <% end  %>
             </div>
             </div>
+            <%= button_to "Destroy this article", @article, method: :delete if policy(@article).destroy? %>
+
         </div>
 
         <%#  input fot comment  %>

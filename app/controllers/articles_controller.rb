@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    authorize @article
   end
 
   def edit
@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     @article.delete
     redirect_to articles_path
   end
